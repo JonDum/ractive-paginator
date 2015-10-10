@@ -44,25 +44,26 @@ Includes minimal styling under the class `.ractive-paginator`. Styles are includ
 
 ##### Properties
 
-`items`: Array of Objects where each key is a column
+`items`: Array of items that are paginated
 
-`perpage`: How many items to display per page
+`perpage`: How many items to display per page (default 30)
 
 `page`: the current page
 
-`total`: the current page
+`lastPage`: how many pages total based off the number of items and `perpage`
 
-`lastPage` (readonly): the last page or total number of pages
 
 ##### Methods
-
 
 `previousPage`: Go to the previous page
 
 `nextPage`: Go to the next page
 
+`gotoPage`: Go to a specific page
 
 
+
+### :)
 
 
 Open to PRs and stuff. I'm around.
