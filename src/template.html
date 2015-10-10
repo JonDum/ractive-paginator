@@ -1,0 +1,44 @@
+
+
+<div {{#if id}}
+     id='{{id}}'
+     {{/if}}
+     class='ractive-paginator {{class}}' 
+     {{#if style}}
+     style='{{style}}'
+     {{/if}}>
+
+    <div class='items'>
+        {{#each _items}}
+            {{> content}}
+        {{/each}}
+    </div>
+
+    <div class='footer'>
+        Displaying {{current}} of {{total}}
+        {{#if pages}}
+        <span class='pagination'>
+
+            {{#if onFirstPage}}
+                <span class='disabled'>Previous</span>
+            {{else}}
+                <a on-click='previousPage()'>Previous</a>
+            {{/if}}
+
+            <span class='pages'>
+                {{#pages}}
+                <a on-click='gotoPage(this)' class='{{page == this ? "active" : ""}}'>{{.}}</a>
+                {{/}}
+            </span>
+
+            {{#if onLastPage}}
+                <span class='disabled'>Next</span>
+            {{else}}
+                <a on-click='nextPage()'>Next</a>
+            {{/if}}
+
+        </span>
+        {{/if}}
+    </div>
+</div>
+
