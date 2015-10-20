@@ -110,7 +110,16 @@ module.exports = Ractive.extend({
 
     gotoPage: function(page) {
         this.set('page', page);
-    }
+    },
 
+    oninit: function() {
+
+        var self = this;
+        // reset page when perpage changes
+        self.observe('perpage filter', function() {
+            self.set('page', 1);
+        });
+
+    }
 
 })
