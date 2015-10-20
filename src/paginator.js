@@ -22,7 +22,7 @@ module.exports = Ractive.extend({
 
             var page = this.get('page') - 1;
             var items = this.get('items');
-            var perpage = this.get('perpage');
+            var perpage = parseInt(this.get('perpage'), 10);
             var total = this.get('total');
 
             return items.slice(page * perpage, Math.min(page * perpage + perpage, total));
@@ -31,7 +31,7 @@ module.exports = Ractive.extend({
 
         lastPage: function() {
             var total = this.get('total');
-            var perpage = this.get('perpage');
+            var perpage = parseInt(this.get('perpage'), 10);
 
             return Math.ceil(total / perpage);
         },
@@ -56,7 +56,7 @@ module.exports = Ractive.extend({
                 return 0;
 
             var page = this.get('page');
-            var perpage = this.get('perpage');
+            var perpage = parseInt(this.get('perpage'), 10);
             var total = this.get('total');
             var ppp = (page - 1) * perpage;
             return (page === 1 ? 1 : ppp) + '-' + Math.min(ppp + perpage, total)
@@ -71,7 +71,7 @@ module.exports = Ractive.extend({
 
             var total = this.get('total');
             var page = this.get('page');
-            var perpage = this.get('perpage');
+            var perpage = parseInt(this.get('perpage'), 10);
 
             var onFirstPage = this.get('onFirstPage');
             var lastPage = this.get('lastPage');
