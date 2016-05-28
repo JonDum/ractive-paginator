@@ -3,7 +3,7 @@ require('!!style!css!stylus!./styles.styl');
 
 module.exports = Ractive.extend({
 
-    template: require('./template.html'),
+    template: require('!!raw!./template.html'),
 
     data: function() {
         return {
