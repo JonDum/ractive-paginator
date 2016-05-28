@@ -116,6 +116,10 @@
                     var data = this.get('data')
                     this.set('data', data.concat(d));
 
+                },
+
+                oncomplete: function() {
+                    this.generate(200);
                 }
 
             })
