@@ -1,5 +1,5 @@
 
-require('./styles.styl');
+require('!!style!css!stylus!./styles.styl');
 
 module.exports = Ractive.extend({
 
@@ -7,11 +7,8 @@ module.exports = Ractive.extend({
 
     data: function() {
         return {
-
             perpage: 30,
-
             page: 1,
-
         }
     },
 
