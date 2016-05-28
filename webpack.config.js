@@ -5,7 +5,7 @@ module.exports = {
     entry: ['src/paginator'],
     output: {
         path: __dirname + '/',
-        filename: 'paginator.min.js',
+        filename: 'ractive-paginator.js',
         library: 'RactivePaginator',
         libraryTarget: 'umd'
     },
@@ -13,20 +13,6 @@ module.exports = {
         root: process.cwd(),
         modulesDirectories: ['node_modules', 'bower_components', 'css', 'js', 'templates'],
         extensions: ['', '.js', '.styl', '.html'],
-    },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ],
-    module: {
-        loaders: [
-            {test: /\.styl$/, loader:'style-loader!css-loader!stylus-loader'},
-            {test: /\.css$/, loader: 'style-loader!css-loader'},
-            {test: /\.html/, loader: 'ractive'}
-        ],
     },
 }
 
